@@ -2,38 +2,42 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>Jimmy Ellingham Feed</title>
+<title>Latest Jimmy Ellingham Stories</title>
 <style>
-body {
-font-family: Arial, sans-serif;
-margin: 20px;
+body{
+font-family:Arial,sans-serif;
+margin:0;
+padding:20px;
 }
-.story {
-padding: 12px;
-margin-bottom: 12px;
-border: 1px solid #ddd;
-border-radius: 8px;
+.story{
+padding:15px;
+margin-bottom:12px;
+border:1px solid #ddd;
+border-radius:8px;
+background:#fff;
 }
-.story a {
-text-decoration: none;
-font-weight: bold;
-color: #0055aa;
+.story a{
+color:#0066cc;
+font-weight:bold;
+text-decoration:none;
 }
 </style>
 </head>
 <body>
-<h2>Latest Jimmy Ellingham Stories</h2>
-<div id="feed">
-Loading...
-</div>
+<div id="feed">Loading...</div>
 <script>
-document.getElementById("feed").innerHTML = `
+fetch('./stories.json')
+.then(r => r.json())
+.then(stories => {
+document.getElementById('feed').innerHTML =
+stories.map(story => `
 <div class="story">
-<a href="https://www.rnz.co.nz/authors/jimmy-ellingham" target="_blank">
-View Jimmy Ellingham's latest RNZ stories
+${story.url}
+${story.title}
 </a>
 </div>
-`;
+`).join('');
+});
 </script>
 </body>
 </html>
