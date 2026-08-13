@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Jimmy Ellingham Feed</title>
+<style>
+body {
+font-family: Arial, sans-serif;
+margin: 20px;
+}
+.story {
+padding: 12px;
+margin-bottom: 12px;
+border: 1px solid #ddd;
+border-radius: 8px;
+}
+.story a {
+text-decoration: none;
+font-weight: bold;
+color: #0055aa;
+}
+</style>
+</head>
+<body>
+<h2>Latest Jimmy Ellingham Stories</h2>
+<div id="feed">
+Loading...
+</div>
+<script>
+document.getElementById("feed").innerHTML = `
+<div class="story">
+<a href="https://www.rnz.co.nz/authors/jimmy-ellingham" target="_blank">
+View Jimmy Ellingham's latest RNZ stories
+</a>
+</div>
+`;
+</script>
+</body>
+</html>
